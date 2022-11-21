@@ -1,16 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bx.fallmerayer.javafxtest.favafx_test.HelloController" onKeyTyped="#callCalc" onKeyReleased="#keyHandling">
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.bx.fallmerayer.javafxtest.favafx_test.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+    <stylesheets>
+        <URL value="@customButton.css"/>
+    </stylesheets>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="1000.0"/>
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="1000.0"/>
+        <ColumnConstraints minWidth="10.0" prefWidth="1000.0"/>
+        <ColumnConstraints minWidth="10.0" prefWidth="1000.0"/>
+        <ColumnConstraints minWidth="10.0" prefWidth="1000.0"/>
+    </columnConstraints>
+
+    <Label text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" fx:id="numLabel" prefHeight="1000.0" prefWidth="Infinity"/>
+
+    <Button text="del" GridPane.columnIndex="3" GridPane.rowIndex="0" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearLastSign"/>
+
+    <Button text="C" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearNumText"
+            id="redButton"/>
+    <Button text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
+    <Button text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="(-)" GridPane.columnIndex="3" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
+    <Button text="√" GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="x^(" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
+    <Button text="(" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text=")" GridPane.columnIndex="3" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="7" GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="4" GridPane.columnIndex="0" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="5" GridPane.columnIndex="1" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="6" GridPane.columnIndex="2" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="+" GridPane.columnIndex="3" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="1" GridPane.columnIndex="0" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="2" GridPane.columnIndex="1" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="3" GridPane.columnIndex="2" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button fx:id = "enter" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"
+            GridPane.rowSpan="2"/>
+    <Button text="0" GridPane.columnIndex="0" GridPane.rowIndex="6" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"
+            GridPane.columnSpan="2"/>
+    <Button text="." GridPane.columnIndex="2" GridPane.rowIndex="6" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
+</GridPane>
