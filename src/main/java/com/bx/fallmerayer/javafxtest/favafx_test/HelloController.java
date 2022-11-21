@@ -13,7 +13,7 @@ public class HelloController{
     @FXML
     private Button enter;
     private boolean resDisplay;
-    static char []allowed = new char[]{'+', '-', '*', '/', '.'};
+    static char []allowed = new char[]{'+', '-', '*', '/', '.', '^'};
 
 
     private double calc (double a, double b, String sign){
@@ -235,6 +235,9 @@ public class HelloController{
     @FXML
     private void callCalc(KeyEvent evt){
         if(evt != null && !evt.getCharacter().equals("\r")){
+            if(evt.getCharacter().equals("^")){
+                numLabel.setText(numLabel.getText() + "^(");
+            }
             return;
         }
         enter.requestFocus();
@@ -283,6 +286,10 @@ public class HelloController{
         if(c >= '0' && c <= '9'){
             numLabel.setText(numLabel.getText() + c);
         }else{
+            if(c == '^'){
+                numLabel.setText(numLabel.getText() + "^(");
+                return;
+            }
             for (char value : allowed) {
                 if (value == c) {
                     numLabel.setText(numLabel.getText() + c);
