@@ -33,31 +33,31 @@
 
     <Label text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" fx:id="numLabel" prefHeight="1000.0" prefWidth="Infinity"/>
 
-    <Button text="del" GridPane.columnIndex="3" GridPane.rowIndex="0" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearLastSign"/>
+    <Button text="del" GridPane.columnIndex="3" GridPane.rowIndex="0" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearLastSign" onMousePressed="#reColor"/>
 
-    <Button text="C" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearNumText"
+    <Button text="C" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#clearNumText" onMousePressed="#reColor"
             id="redButton"/>
-    <Button text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
-    <Button text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="(-)" GridPane.columnIndex="3" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
-    <Button text="√" GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="x^(" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
-    <Button text="(" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text=")" GridPane.columnIndex="3" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="7" GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="4" GridPane.columnIndex="0" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="5" GridPane.columnIndex="1" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="6" GridPane.columnIndex="2" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="+" GridPane.columnIndex="3" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="1" GridPane.columnIndex="0" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="2" GridPane.columnIndex="1" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
-    <Button text="3" GridPane.columnIndex="2" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"/>
+    <Button text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="(-)" GridPane.columnIndex="3" GridPane.rowIndex="1" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="√" GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="x^(" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="(" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text=")" GridPane.columnIndex="3" GridPane.rowIndex="2" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="7" GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="4" GridPane.columnIndex="0" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="5" GridPane.columnIndex="1" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="6" GridPane.columnIndex="2" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="+" GridPane.columnIndex="3" GridPane.rowIndex="4" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="1" GridPane.columnIndex="0" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="2" GridPane.columnIndex="1" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
+    <Button text="3" GridPane.columnIndex="2" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText" onMousePressed="#reColor"/>
     <Button fx:id = "enter" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5" prefHeight="1000.0" prefWidth="Infinity"   onAction="#addInNumText"
-            GridPane.rowSpan="2"/>
+            GridPane.rowSpan="2" onMousePressed="#reColor"/>
     <Button text="0" GridPane.columnIndex="0" GridPane.rowIndex="6" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"
-            GridPane.columnSpan="2"/>
-    <Button text="." GridPane.columnIndex="2" GridPane.rowIndex="6" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText"/>
+            GridPane.columnSpan="2" onMousePressed="#reColor"/>
+    <Button text="." GridPane.columnIndex="2" GridPane.rowIndex="6" prefHeight="1000.0" prefWidth="Infinity" onAction="#addInNumText" onMousePressed="#reColor"/>
 </GridPane>

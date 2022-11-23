@@ -1,10 +1,13 @@
 package com.bx.fallmerayer.javafxtest.favafx_test;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import org.mariuszgromada.math.mxparser.Expression;
 
 
 public class HelloController{
@@ -60,11 +63,11 @@ public class HelloController{
                 ign -= 1;
                 continue;
             }
-            if(ign > 0){
-                continue;
-            }
             if(part.charAt(i) == '('){
                 ign += 1;
+                continue;
+            }
+            if(ign > 0){
                 continue;
             }
             if(part.charAt(i) == '+' || part.charAt(i) == '-'){
@@ -78,30 +81,33 @@ public class HelloController{
                     ign -= 1;
                     continue;
                 }
-                if(ign > 0){
-                    continue;
-                }
                 if(part.charAt(i) == '('){
                     ign += 1;
                     continue;
                 }
+                if(ign > 0){
+                    continue;
+                }
+
                 if(part.charAt(i) == '*' || part.charAt(i) == '/'){
                     index = i;
                 }
             }
+            ign = 0;
             if(index == part.length()){
                 for(int i = skip; i < part.length(); ++i){
                     if(part.charAt(i) == ')'){
                         ign -= 1;
                         continue;
                     }
-                    if(ign > 0){
-                        continue;
-                    }
                     if(part.charAt(i) == '('){
                         ign += 1;
                         continue;
                     }
+                    if(ign > 0){
+                        continue;
+                    }
+
                     if(part.charAt(i) == '^' || part.charAt(i) == '√'){
                         index = i;
                     }
@@ -135,11 +141,20 @@ public class HelloController{
     }
 
     @FXML
+    private void reColor(MouseEvent actionEvent){
+        if (actionEvent.getSource().getClass().equals(Button.class)) {
+            Button temp = (Button) actionEvent.getSource();
+            temp.setStyle("-fx-background-color: #ff0000; ");
+        }
+    }
+    @FXML
     public void addInNumText(ActionEvent actionEvent) {
         if (actionEvent.getSource().getClass().equals(Button.class)) {
             Button temp = (Button) actionEvent.getSource();
+            temp.setStyle("-fx-background-color: #c6d6f7;");
             if(temp.getText().equals("=")){
                 callCalc(null);
+
                 /*
                 resDisplay = true;
                 String toCalc = numLabel.getText();
@@ -209,9 +224,9 @@ public class HelloController{
                 if(resDisplay) {
                     resDisplay = false;
                     if(temp.getText().equals("+") || temp.getText().equals("-") || temp.getText().equals("*") || temp.getText().equals("/")) {
-                        numLabel.setText(String.format("%s%s", numLabel.getText(), temp.getText()));
+                        numLabel.setText(numLabel.getText() + temp.getText());
                     }else if(temp.getText().equals("x^(")){
-                        numLabel.setText(String.format("%s%s", numLabel.getText(), temp.getText().substring(1)));
+                        numLabel.setText(numLabel.getText() + temp.getText().substring(1));
                     }else if(temp.getText().equals("√")){
                         numLabel.setText("√(");
                     }else{
@@ -220,11 +235,13 @@ public class HelloController{
                     }
                 }else{
                     if(temp.getText().equals("x^(")){
-                        numLabel.setText(String.format("%s%s", numLabel.getText(), temp.getText().substring(1)));
+                        numLabel.setText(numLabel.getText() + temp.getText().substring(1));
                     }else if(temp.getText().equals("√")){
-                        numLabel.setText(String.format("%s%s(", numLabel.getText(), temp.getText()));
-                    }else {
-                        numLabel.setText(String.format("%s%s", numLabel.getText(), temp.getText()));
+                        numLabel.setText(numLabel.getText() + temp.getText());
+                    }else if(temp.getText().equals("(-)")){
+                        numLabel.setText(numLabel.getText() + "-");
+                    }else{
+                        numLabel.setText(numLabel.getText() + temp.getText());
                     }
                 }
             }
@@ -240,8 +257,12 @@ public class HelloController{
             }
             return;
         }
+
+        numLabel.setText("" + new Expression(numLabel.getText()).calculate());
         enter.requestFocus();
         resDisplay = true;
+        /*
+
         String toCalc = numLabel.getText();
         Node root = new Node();
         root = setTree(root, toCalc);
@@ -255,7 +276,7 @@ public class HelloController{
             numLabel.setText("" + (int)res);
         }else{
             numLabel.setText("" + res);
-        }
+        }//*/
     }
 
     private boolean testString(String s){
@@ -300,10 +321,19 @@ public class HelloController{
     public void clearNumText(ActionEvent actionEvent) {
         resDisplay = false;
         numLabel.setText("");
+        if (actionEvent.getSource().getClass().equals(Button.class)) {
+            Button temp = (Button) actionEvent.getSource();
+            temp.setStyle("-fx-background-color: rgb(255, 100, 0);");
+        }
     }
     public void clearLastSign (ActionEvent actionEvent){
+        if (actionEvent.getSource().getClass().equals(Button.class)) {
+            Button temp = (Button) actionEvent.getSource();
+            temp.setStyle("-fx-background-color: #c6d6f7;");
+        }
         resDisplay = false;
         if(!numLabel.getText().equals(""))
             numLabel.setText(numLabel.getText().substring(0, numLabel.getText().length() - 1));
+
     }
 }
